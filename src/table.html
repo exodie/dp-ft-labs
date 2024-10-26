@@ -175,9 +175,19 @@
           const form = document.getElementById("form").value;
           const direction = document.getElementById("direction").value;
 
-          console.log(
-            `${id}, ${name}, ${bookNumber}, ${groupNumber}, ${gender}, ${age}, ${form}, ${direction}`
-          );
+          const tableRow = document.createElement("tr");
+          tableRow.innerHTML = `
+            <td>${id}</td> 
+            <td>${name}</td> 
+            <td>${bookNumber}</td> 
+            <td>${groupNumber}</td> 
+            <td>${gender}</td> 
+            <td>${age}</td> 
+            <td>${form}</td> 
+            <td>${direction}</td>
+          `;
+
+          document.querySelector("tbody").appendChild(tableRow);
         });
     </script>
   </body>
