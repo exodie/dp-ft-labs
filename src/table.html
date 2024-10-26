@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таблица</title>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/table.css" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="./index.html">Основная страница</a>
+      <a href="./page2.html">Позиционирование элементов</a>
+      <a href="./table.html">Таблица</a>
+    </div>
+
+    <h1>Список студентов</h1>
+
+    <form class="form" id="add-students">
+      <div class="form-item">
+        <label for="id">ID:</label>
+        <input placeholder="1" type="number" id="id" name="id" required />
+      </div>
+
+      <div class="form-item">
+        <label for="name">ФИО студента:</label>
+        <input
+          placeholder="Иванов Иван Иванович"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="bookNumber">Номер зачётной книжки:</label>
+        <input
+          placeholder="123456"
+          type="text"
+          id="bookNumber"
+          name="bookNumber"
+          required
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="groupNumber">Номер группы:</label>
+        <input
+          placeholder="01"
+          type="text"
+          id="groupNumber"
+          name="groupNumber"
+          required
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender" required>
+          <option value="М">М</option>
+          <option value="Ж">Ж</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="age">Возраст:</label>
+        <input placeholder="18" type="number" id="age" name="age" required />
+      </div>
+
+      <div class="form-item">
+        <label for="form">Форма поступления:</label>
+        <select id="form" name="form" required>
+          <option value="Очная">Очная</option>
+          <option value="Заочная">Заочная</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="direction">Название направления:</label>
+        <input
+          placeholder="Математика"
+          type="text"
+          id="direction"
+          name="direction"
+          required
+        />
+      </div>
+
+      <button class="submit" type="submit">Добавить</button>
+    </form>
+
+    <table>
+      <caption>
+        Таблица студентов
+      </caption>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ФИО студента</th>
+          <th>Номер зачётной книжки</th>
+          <th>Номер группы</th>
+          <th>Пол</th>
+          <th>Возраст</th>
+          <th>Форма поступления</th>
+          <th>Название направления</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Иванов Иван Иванович</td>
+          <td>123456</td>
+          <td>Группа 21-И</td>
+          <td>М</td>
+          <td>20</td>
+          <td>Очная</td>
+          <td>Информатика</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Петрова Анна Сергеевна</td>
+          <td>654321</td>
+          <td>Группа 21-И</td>
+          <td>Ж</td>
+          <td>19</td>
+          <td>Очная</td>
+          <td>Информатика</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Сидоров Алексей Викторович</td>
+          <td>789012</td>
+          <td>Группа 23-Ф</td>
+          <td>М</td>
+          <td>21</td>
+          <td>Очная</td>
+          <td>Физика</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Кузнецова Мария Павловна</td>
+          <td>345678</td>
+          <td>Группа 23-Ф</td>
+          <td>Ж</td>
+          <td>22</td>
+          <td>Очная</td>
+          <td>Физика</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Смирнов Дмитрий Александрович</td>
+          <td>901234</td>
+          <td>Группа 23-Ф</td>
+          <td>М</td>
+          <td>20</td>
+          <td>Очная</td>
+          <td>Физика</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      document
+        .getElementById("add-students")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const id = document.getElementById("id").value;
+          const name = document.getElementById("name").value;
+          const bookNumber = document.getElementById("bookNumber").value;
+          const groupNumber = document.getElementById("groupNumber").value;
+          const gender = document.getElementById("gender").value;
+          const age = document.getElementById("age").value;
+          const form = document.getElementById("form").value;
+          const direction = document.getElementById("direction").value;
+
+          const tableRow = document.createElement("tr");
+          tableRow.innerHTML = `
+            <td>${id}</td> 
+            <td>${name}</td> 
+            <td>${bookNumber}</td> 
+            <td>${groupNumber}</td> 
+            <td>${gender}</td> 
+            <td>${age}</td> 
+            <td>${form}</td> 
+            <td>${direction}</td>
+          `;
+
+          document.querySelector("tbody").appendChild(tableRow);
+        });
+    </script>
+  </body>
+</html>

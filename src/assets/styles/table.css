@@ -1,0 +1,65 @@
+table {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+caption {
+  font-size: 1.5em;
+
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+
+  text-align: center;
+}
+
+thead {
+  background-color: rgb(205, 205, 205);
+  color: black;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(105, 105, 105);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(155, 155, 155);
+}
+
+tbody tr:hover {
+  background-color: #cccccc;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.form-item {
+  margin: 2px 0;
+
+  display: flex;
+  flex-direction: row;
+
+  column-gap: 6px;
+}
+
+.submit {
+  margin: 8px 0;
+
+  font-size: 16px;
+
+  padding: 4px 8px;
+
+  border: none;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
