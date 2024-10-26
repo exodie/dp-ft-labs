@@ -14,6 +14,82 @@
       <a href="./table.html">Таблица</a>
     </div>
 
+    <h1>Список студентов</h1>
+
+    <form class="form" id="add-students">
+      <div class="form-item">
+        <label for="id">ID:</label>
+        <input placeholder="1" type="number" id="id" name="id" required />
+      </div>
+
+      <div class="form-item">
+        <label for="name">ФИО студента:</label>
+        <input
+          placeholder="Иванов Иван Иванович"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="bookNumber">Номер зачётной книжки:</label>
+        <input
+          placeholder="123456"
+          type="text"
+          id="bookNumber"
+          name="bookNumber"
+          required
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="groupNumber">Номер группы:</label>
+        <input
+          placeholder="01"
+          type="text"
+          id="groupNumber"
+          name="groupNumber"
+          required
+        />
+      </div>
+
+      <div class="form-item">
+        <label for="gender">Пол:</label>
+        <select id="gender" name="gender" required>
+          <option value="М">М</option>
+          <option value="Ж">Ж</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="age">Возраст:</label>
+        <input placeholder="18" type="number" id="age" name="age" required />
+      </div>
+
+      <div class="form-item">
+        <label for="form">Форма поступления:</label>
+        <select id="form" name="form" required>
+          <option value="Очная">Очная</option>
+          <option value="Заочная">Заочная</option>
+        </select>
+      </div>
+
+      <div class="form-item">
+        <label for="direction">Название направления:</label>
+        <input
+          placeholder="Математика"
+          type="text"
+          id="direction"
+          name="direction"
+          required
+        />
+      </div>
+
+      <button class="submit" type="submit">Добавить</button>
+    </form>
+
     <table>
       <caption>
         Таблица студентов
@@ -83,5 +159,26 @@
         </tr>
       </tbody>
     </table>
+
+    <script>
+      document
+        .getElementById("add-students")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const id = document.getElementById("id").value;
+          const name = document.getElementById("name").value;
+          const bookNumber = document.getElementById("bookNumber").value;
+          const groupNumber = document.getElementById("groupNumber").value;
+          const gender = document.getElementById("gender").value;
+          const age = document.getElementById("age").value;
+          const form = document.getElementById("form").value;
+          const direction = document.getElementById("direction").value;
+
+          console.log(
+            `${id}, ${name}, ${bookNumber}, ${groupNumber}, ${gender}, ${age}, ${form}, ${direction}`
+          );
+        });
+    </script>
   </body>
 </html>
